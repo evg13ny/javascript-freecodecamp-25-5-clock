@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <title>freeCodeCamp 25 + 5 Clock</title>
+</head>
+
+<body>
+  <div class="container">
+    <section id="header">
+      <h1 id="header-text">25 + 5 Clock</h1>
+    </section>
+
+    <article id="info">
+      <div id="break-controls">
+        <h2 id="break-label">Break Length</h2>
+        <div id="element1">
+          <button type="button" id="break-increment"><i class="fa-solid fa-angle-up"></i></button>
+          <span id="break-length">5</span>
+          <button type="button" id="break-decrement"><i class="fa-solid fa-angle-down"></i></button>
+        </div>
+      </div>
+
+      <div id="session-controls">
+        <h2 id="session-label">Session Length</h2>
+        <div id="element2">
+          <button type="button" id="session-increment"><i class="fa-solid fa-angle-up"></i></button>
+          <span id="session-length">25</span>
+          <button type="button" id="session-decrement"><i class="fa-solid fa-angle-down"></i></button>
+        </div>
+      </div>
+    </article>
+
+    <article id="display">
+      <h2 id="timer-label">Session</h2>
+      <div id="time-left">25:00</div>
+      <div id="btn-div">
+        <button type="button" id="start_stop"><i class="fa-solid fa-circle-play"></i></button>
+        <button type="button" id="reset"><i class="fa-solid fa-rotate"></i></button>
+      </div>
+
+      <audio id="beep"
+        src="https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav"
+        muted></audio>
+    </article>
+
+  </div>
+
+  <script src="index.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+  <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+</body>
+
+</html>
