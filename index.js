@@ -8,6 +8,7 @@ $(document).ready(() => {
   let dispValSec = 0;
   let setIntID = 0;
   let isBreak = false;
+  let clip = document.getElementById('beep');
 
   $('#break-length').text(breakStr);
   $('#session-length').text(sessionStr);
@@ -86,14 +87,21 @@ $(document).ready(() => {
       } else if (dispValMin >= 0 && dispValSec > 0) {
         dispValSec--;
 
+        if (dispValMin < 1) {
+          $('#timer-label').addClass('red');
+          $('#time-left').addClass('red');
+        }
+
         updateDisplay();
       } else if (dispValMin == 0 && dispValSec == 0) {
         isBreak = true;
         dispValMin = breakStr;
         dispValSec = 0;
         $('#timer-label').text('Break');
-        document.getElementById('beep').play();
-        document.getElementById('beep').muted = false;
+        clip.play();
+        clip.muted = false;
+        $('#timer-label').removeClass('red');
+        $('#time-left').removeClass('red');
         updateDisplay();
       }
     } else {
@@ -106,14 +114,21 @@ $(document).ready(() => {
       } else if (dispValMin >= 0 && dispValSec > 0) {
         dispValSec--;
 
+        if (dispValMin < 1) {
+          $('#timer-label').addClass('red');
+          $('#time-left').addClass('red');
+        }
+
         updateDisplay();
       } else if (dispValMin == 0 && dispValSec == 0) {
         isBreak = false;
         dispValMin = sessionStr;
         dispValSec = 0;
         $('#timer-label').text('Session');
-        document.getElementById('beep').play();
-        document.getElementById('beep').muted = false;
+        clip.play();
+        clip.muted = false;
+        $('#timer-label').removeClass('red');
+        $('#time-left').removeClass('red');
         updateDisplay();
       }
     }
@@ -144,7 +159,6 @@ $(document).ready(() => {
     clearInterval(setIntID);
     isPlay = false;
     isBreak = false;
-    let clip = document.getElementById('beep');
     clip.pause();
     clip.currentTime = 0;
   });
